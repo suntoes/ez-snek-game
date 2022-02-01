@@ -136,7 +136,12 @@ button:hover {
     }
     @media (min-height: 1100px) {
         body {
-          transform: scale(150%)
+          transform: scale(140%)
         }
       }
+    @media (min-height: 1500px) {
+      body {
+        transform: scale(175%)
+      }
+    }
 }
