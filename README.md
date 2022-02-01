@@ -9,5 +9,3 @@ Few days after, just when I've just finished the introduction part of the docume
 
 ### What I've learned from this is...
 There are hella lot of real deal hefty documentation out there that I've got to read.
-
-ps. I believe this will suffice for the basics of front-end, t'was fun. But i've gotta give back-end a shot now, till next time.
