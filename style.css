@@ -99,7 +99,7 @@ button:hover {
 }
 
 @media screen {
-    @media (max-height: 800px) {
+    @media (max-width: 500px) {
         #game-button {
             font-size: 17px;
             width: 240px;
