@@ -21,6 +21,10 @@ html {
     background-color: #212121;
 }
 
+button:focus {
+    outline: 0 !important;
+}
+
 #board-div {
     display: flex;
     flex-wrap: wrap;
