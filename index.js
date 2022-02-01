@@ -38,7 +38,8 @@ document.querySelector('#control-toggle').onclick = controlsToggle;
 document.querySelectorAll('.controls-button').forEach(btn => btn.onclick = function(){inputKey(btn.id)});
 
 // control essentials
-document.addEventListener('keypress', (e) => {
+document.addEventListener('keydown', (e) => {
+    console.log(e.key.toLowerCase())
     inputKey(e.key.toLowerCase());
 })
 function controlsToggle() {
@@ -53,6 +54,7 @@ function controlsToggle() {
 function inputKey(key) {
     if (document.querySelector('#game-button').innerHTML !== 'click me to play!') {
         switch(key) {
+            case 'arrowup':
             case 'w':
                 if (snakeIndex[0]-8 === snakeIndex[1]) {
                     break;
@@ -63,6 +65,7 @@ function inputKey(key) {
                         moveDown = false;
                 }
                 break;
+            case 'arrowleft':
             case 'a':
                 if (snakeIndex[0]-1 === snakeIndex[1]) {
                     break;
@@ -73,6 +76,7 @@ function inputKey(key) {
                         moveDown = false;
                 }
                 break;
+            case 'arrowright':
             case 'd':
                 if (snakeIndex[0]+1 === snakeIndex[1]) {
                     break;
@@ -83,6 +87,7 @@ function inputKey(key) {
                         moveDown = false;
                 }
                 break;
+            case 'arrowdown':
             case 's':
                 if (snakeIndex[0]+8 === snakeIndex[1]) {
                     break;
