@@ -1,0 +1,133 @@
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #212121;
+}
+
+.wrapper {
+    border: 1px solid #636363;
+}
+
+#game-button {
+    color: #daca3c;
+    font-size: 20px;
+    height: 30px;
+    width: 400px;
+    box-sizing: border-box;
+    border: 1px solid #636363;
+    border-radius: 0;
+    background-color: #212121;
+}
+
+#board-div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 600px;
+}
+
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    color: #636363;
+    font-size: 15px;
+}
+
+#control-toggle {
+    box-sizing: border-box;
+    border: 1px solid #636363;
+    border-radius: 0;
+    background-color: #212121;
+    color: #daca3c;
+}
+
+.cells {
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+    border: 1px solid #636363;
+}
+
+.cell-head {
+    display: flex;
+    align-items: center;
+    font-size: 57px;
+}
+
+#controls-div {
+    display: none;
+}
+
+.controls-button {
+    background-color: #212121;
+    color: #daca3c;
+    font-size: 50px;
+    box-sizing: border-box;
+    border: 1px solid #636363;
+    border-radius: 0;
+}
+
+#a, #d {
+    height: 150px;
+    width: 100px;
+}
+
+.y-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+#w {
+    height: 75px;
+    width: 200px;
+    transform: rotate(180deg);
+}
+
+#s {
+    height: 75px;
+    width: 200px;
+}
+
+button:hover {
+    filter: brightness(125%);
+}
+
+@media screen {
+    @media (max-height: 800px) {
+        #game-button {
+            font-size: 17px;
+            width: 240px;
+        }
+        #board-div {
+            width: 240px;
+            height: 360px;
+        }
+        .wrapper {
+            width: 240px;
+        }
+        .cells {
+            height: 30px;
+            width: 30px;
+            font-weight: 600;
+        }
+        .cell-head {
+            font-size: 34px;
+        }
+        .controls-button {
+            font-size: 30px;
+        }
+        .bottom-bar {
+            font-size: 10px;
+        }
+        #a,#d{
+            height: 90px;
+            width: 60px;
+        }
+        #w,#s{
+            width: 120px;
+            height: 45px;
+        }
+    }   
+}
