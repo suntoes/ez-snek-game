@@ -25,11 +25,11 @@ html {
 }
 
 .apple-count {
-    color: #ff5959;
+    color: #ff5959 !important;
 }
 
 .speed-count {
-    color: #4df163;
+    color: #4df163 !important;
 }
 
 button:focus {
