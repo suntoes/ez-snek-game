@@ -147,7 +147,7 @@ button:hover {
     }
     @media (min-height: 1100px) {
         html {
-            height: unset;
+            height: 1000px;
         }
         body {
             transform: scale(140%);
@@ -157,10 +157,10 @@ button:hover {
     @media (min-height: 1500px) {
         body {
             transform: scale(175%);
-            margin-top: 360px;
+            margin-top: 100px;
       }
         html {
-            height: unset;
+            height: 1500px;
             }
     }
 }
