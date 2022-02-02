@@ -145,7 +145,7 @@ button:hover {
             height: 45px;
         }
     }
-    @media (min-height: 1100px) {
+    @media (min-height: 1100px) and (max-width: 1000px) {
         html {
             height: 1000px;
         }
@@ -154,7 +154,7 @@ button:hover {
             margin-top: 180px;
         }
     }
-    @media (min-height: 1500px) {
+    @media (min-height: 1500px) and (max-width: 1500px) {
         body {
             transform: scale(175%);
             margin-top: 100px;
