@@ -21,6 +21,7 @@ html {
     border: 1px solid #636363;
     border-radius: 0;
     background-color: #212121;
+    color:#daca3c;
 }
 
 .apple-count {
@@ -29,10 +30,6 @@ html {
 
 .speed-count {
     color: #4df163;
-}
-
-.text {
-    color:#daca3c;
 }
 
 button:focus {
