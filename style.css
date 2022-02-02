@@ -2,7 +2,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     background-color: #212121;
 }
 
@@ -147,20 +147,20 @@ button:hover {
     }
     @media (min-height: 1100px) and (max-width: 1000px) {
         html {
-            height: 1000px;
+
         }
         body {
             transform: scale(140%);
-            margin-top: 180px;
+
         }
     }
     @media (min-height: 1500px) and (max-width: 1500px) {
         body {
             transform: scale(175%);
-            margin-top: 100px;
+
       }
         html {
-            height: 1500px;
+
             }
     }
 }
