@@ -13,7 +13,7 @@ Made this possible because a redditor recommended me some DOM documentation. Fro
 
 Few days after that, exactly just when I've finished the introduction part of the documentation to DOM, I had got to coding right away, and this is the result of my recent code spree redemption.
 
-## ez snek functionality relies on...
+## ez snek's top 3 syntax are...
 <details>
   <summary>DOM Manipulation</summary>
 
