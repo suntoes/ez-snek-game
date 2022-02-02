@@ -137,7 +137,7 @@ function reset() {
     moveUp = true;
     moveDown = false;
     
-    speed = 400;
+    speed = 600;
 
     document.querySelector('#board-div').onclick = () => {defPass = true; gameOn()};
     document.querySelector('#game-button').onclick = () => {defPass = true; gameOn()};
@@ -175,13 +175,14 @@ function renderBoard() {
         appleIndex = listOfAppleFree[newAppleIndex()];
 
         newSpeed();
-        
+
         // refreshes the render calls for new speed
         gameOff();
         gameOn();
 
         // gameboard update
-        document.querySelector('#game-button').innerHTML = `${94-(board.length - snakeIndex.length)}/94 apples, ${(600/speed).toFixed(2)}x speed`;
+        document.querySelector('#game-button').innerHTML = 
+            `<div class="apple-count">${94-(board.length - snakeIndex.length)}/94</div> &nbsp; apples, &nbsp;<div class="speed-count">${(600/speed).toFixed(2)}x</div> &nbsp; speed`;
     } else {
         // else if snake dont eats apple
         snakeIndex = snakeIndex.map((pos, i) => i === 0 ? snakeMove(pos): snakeIndex[i-1] );

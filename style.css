@@ -11,6 +11,9 @@ html {
 }
 
 #game-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #daca3c;
     font-size: 20px;
     height: 30px;
@@ -19,6 +22,14 @@ html {
     border: 1px solid #636363;
     border-radius: 0;
     background-color: #212121;
+}
+
+.apple-count {
+    color: #ff5959;
+}
+
+.speed-count {
+    color: #4df163;
 }
 
 button:focus {
