@@ -33,7 +33,7 @@ const boardDiv = document.getElementById('board-div');
 const gameButton = document.getElementById('game-button');
 const controlToggleButton = document.getElementById('control-toggle');
 const controlsButton = document.querySelectorAll('.controls-button');
-const controlDiv = document.getElementById('#controls-div');
+const controlDiv = document.getElementById('controls-div');
 
 // initial draw call
 draw(board);
