@@ -146,13 +146,21 @@ button:hover {
         }
     }
     @media (min-height: 1100px) {
-        body {
-          transform: scale(140%)
+        html {
+            height: auto;
         }
-      }
+        body {
+            transform: scale(140%);
+            margin-top: 15vh;
+        }
+    }
     @media (min-height: 1500px) {
-      body {
-        transform: scale(175%)
+        body {
+            transform: scale(175%);
+            margin-top: 20vh;
       }
+      html {
+        height: auto;
+        }
     }
 }
