@@ -6,6 +6,10 @@ html {
     background-color: #212121;
 }
 
+body {
+    filter: drop-shadow(16px 30px 5px #111111);
+}
+
 .wrapper {
     border: 1px solid #636363;
 }
@@ -48,6 +52,16 @@ button:focus {
     justify-content: space-between;
     color: #636363;
     font-size: 15px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #636363;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #848484;
 }
 
 #control-toggle {
@@ -105,8 +119,16 @@ button:focus {
     width: 200px;
 }
 
-button:hover {
+button:hover, .cells:hover {
     filter: brightness(125%);
+}
+
+.controls-button:hover {
+    font-size: 60px;
+}
+
+#game-button:hover {
+    font-size: 21px;
 }
 
 @media screen {
