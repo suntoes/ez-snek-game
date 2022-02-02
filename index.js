@@ -278,20 +278,20 @@ function draw(board) {
 
                 const cell = document.getElementById(i);
                 cell.style.backgroundColor = '#212121';
+                if(cell.innerHTML === ':' && i !== snakeIndex[0]) {
+                    cell.innerHTML = '';
+                    cell.classList.remove('cell-head');
+                    cell.style.transform = '';
+                }
 
                 if(snakeIndex.some(x => x === i)) {
-                    if(cell.innerHTML === ':' && i !== snakeIndex[0]) {
-                        cell.innerHTML = '';
-                        cell.classList.remove('cell-head');
-                        cell.style.transform = '';
-                    } else if(i === snakeIndex[0]) {
+                    if(i === snakeIndex[0]) {
                         cell.classList.add('cell-head');
                         cell.innerHTML = ':';
     
                         let numDeg = moveUp ? 90 : moveRight ? 180 : moveDown ? 270 : 0
                         cell.style.transform = `rotate(${numDeg}deg)`
-                        };    
-
+                    };    
                     cell.classList.add('cells');
                     cell.style.backgroundColor = '#4df163';
                 }   else if(i === appleIndex) {
