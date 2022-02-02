@@ -14,7 +14,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #daca3c;
     font-size: 20px;
     height: 30px;
     width: 400px;
@@ -25,11 +24,15 @@ html {
 }
 
 .apple-count {
-    color: #ff5959 !important;
+    color: #ff5959;
 }
 
 .speed-count {
-    color: #4df163 !important;
+    color: #4df163;
+}
+
+.text {
+    color:#daca3c;
 }
 
 button:focus {

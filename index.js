@@ -51,7 +51,7 @@ function controlsToggle() {
     }
 }
 function inputKey(key) {
-    if (document.querySelector('#game-button').innerHTML !== 'click me to play!') {
+    if (document.querySelector('#game-button').innerHTML !== '<div class="text"> click me to play! </div>') {
         switch(key) {
             case 'arrowup':
             case 'w':
@@ -141,7 +141,7 @@ function reset() {
 
     document.querySelector('#board-div').onclick = () => {defPass = true; gameOn()};
     document.querySelector('#game-button').onclick = () => {defPass = true; gameOn()};
-    document.querySelector('#game-button').innerHTML = 'click me to play!';
+    document.querySelector('#game-button').innerHTML = '<div class="text"> click me to play! </div>';
     document.querySelector('#board-div').style.filter = '';
 
 };
@@ -152,7 +152,7 @@ function gameOn() {
     let interval = setInterval(() => renderBoard(), speed);
 
     // instruction before first apple gets eaten
-    document.querySelector('#game-button').innerHTML = '(w, a, s, d) are the controls!';
+    document.querySelector('#game-button').innerHTML = '<div class="text"> (w, a, s, d) are the controls! </div>';
 
     // disable the unnecessary button for gameplay
     document.querySelector('#board-div').onclick = '';
@@ -182,7 +182,7 @@ function renderBoard() {
 
         // gameboard update
         document.querySelector('#game-button').innerHTML = 
-            `<div class="apple-count">${94-(board.length - snakeIndex.length)}/94</div> &nbsp; apples, &nbsp;<div class="speed-count">${(600/speed).toFixed(2)}x</div> &nbsp; speed`;
+            `<div class="apple-count">${94-(board.length - snakeIndex.length)}/94</div> &nbsp; <div class="text">apples</div>, &nbsp;<div class="speed-count">${(600/speed).toFixed(2)}x</div> &nbsp; <div class="text">speed</div>`;
     } else {
         // else if snake dont eats apple
         snakeIndex = snakeIndex.map((pos, i) => i === 0 ? snakeMove(pos): snakeIndex[i-1] );
@@ -220,7 +220,7 @@ function winTest() {
     // basic logic to detect win win
     if (snakeIndex.length >= board.length) {
         gameOff();
-        document.querySelector('#game-button').innerHTML = 'nc! wanna play again?';
+        document.querySelector('#game-button').innerHTML = '<div class="text"> nc! wanna play again? </div>';
         document.querySelector('#game-button').onclick = gameOn;
     }
 }
@@ -231,7 +231,7 @@ function defTest() {
         reset();
         gameOff();
         defPass = false;
-        document.querySelector('#game-button').innerHTML = 'aw! wanna try again?';
+        document.querySelector('#game-button').innerHTML = '<div class="text"> aw! wanna try again? </div>';
         document.querySelector('#board-div').style.filter = 'brightness(80%)';
     };
 
