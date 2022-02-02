@@ -25,7 +25,7 @@ let moveRight = false;
 let moveUp = true;
 let moveDown = false;
 
-let speed = 500;
+let speed = 600;
 
 let defPass = true;
 
@@ -39,7 +39,6 @@ document.querySelectorAll('.controls-button').forEach(btn => btn.onclick = funct
 
 // control essentials
 document.addEventListener('keydown', (e) => {
-    console.log(e.key.toLowerCase())
     inputKey(e.key.toLowerCase());
 })
 function controlsToggle() {
@@ -105,7 +104,7 @@ function inputKey(key) {
 
 // sets new speed
 function newSpeed() {
-    speed = 500 -(( 1/( board.length/snakeIndex.length) )*200);
+    speed = 600 -(( 1/( board.length/snakeIndex.length) )*200);
 }
 
 // sets new list of snake-free index for next apple
@@ -127,6 +126,7 @@ function newAppleIndex() {
 
 // resets necessary game elements
 function reset() {
+
     snakeIndex = [75,83];
 
     appleIndex = 20;
@@ -136,10 +136,14 @@ function reset() {
     moveRight = false;
     moveUp = true;
     moveDown = false;
-
+    
     speed = 400;
 
+    document.querySelector('#board-div').onclick = () => {defPass = true; gameOn()};
+    document.querySelector('#game-button').onclick = () => {defPass = true; gameOn()};
+    document.querySelector('#game-button').innerHTML = 'click me to play!';
     document.querySelector('#board-div').style.filter = '';
+
 };
 
 // starts the game with setInterval() and renderBoard()
@@ -150,7 +154,8 @@ function gameOn() {
     // instruction before first apple gets eaten
     document.querySelector('#game-button').innerHTML = '(w, a, s, d) are the controls!';
 
-    // disable the game button for unnecessary actions
+    // disable the unnecessary button for gameplay
+    document.querySelector('#board-div').onclick = '';
     document.querySelector('#game-button').onclick = '';
 
     // use of localStorage to clean interval later on other function
@@ -162,21 +167,24 @@ function gameOn() {
 function renderBoard() {
     // if snake eats apple
     if (snakeMove(snakeIndex[0]) === appleIndex) {
+        // adds apple index to snake
         snakeIndex.unshift(appleIndex)
+
+        // new apple function
         refreshAppleFree();
         appleIndex = listOfAppleFree[newAppleIndex()];
+
         newSpeed();
+        
         // refreshes the render calls for new speed
         gameOff();
         gameOn();
+
+        // gameboard update
+        document.querySelector('#game-button').innerHTML = `${94-(board.length - snakeIndex.length)}/94 apples, ${(600/speed).toFixed(2)}x speed`;
     } else {
         // else if snake dont eats apple
         snakeIndex = snakeIndex.map((pos, i) => i === 0 ? snakeMove(pos): snakeIndex[i-1] );
-    }
-
-    // updates control instruction if first apple eaten
-    if (snakeIndex.length > 2) {
-        document.querySelector('#game-button').innerHTML = 'think one step ahead!';
     }
     
     // win or defeat checker
@@ -219,18 +227,10 @@ function winTest() {
 function defTest() {
     // to call if proven lose
     function provenLose() {
-        function reZero() {
-            reset();
-            defPass = true;
-            document.querySelector('#game-button').onclick = gameOn;
-            document.querySelector('#game-button').innerHTML = 'click me to play!';
-            draw(board);
-        }
+        reset();
         gameOff();
-        document.querySelector('#game-button').innerHTML = 'aw! wanna try again?';
-        document.querySelector('#game-button').onclick = reZero;
-        document.querySelector('#board-div').onclick = reZero;
         defPass = false;
+        document.querySelector('#game-button').innerHTML = 'aw! wanna try again?';
         document.querySelector('#board-div').style.filter = 'brightness(80%)';
     };
 
