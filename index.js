@@ -51,7 +51,7 @@ function controlsToggle() {
     }
 }
 function inputKey(key) {
-    if (document.querySelector('#game-button').innerHTML !== 'click me to play!' || document.querySelector('#game-button').innerHTML !== 'aw! wanna try again?') {
+    if (document.querySelector('#game-button').innerHTML !== 'click me to play!' && document.querySelector('#game-button').innerHTML !== 'aw! wanna try again?') {
         switch(key) {
             case 'arrowup':
             case 'w':
