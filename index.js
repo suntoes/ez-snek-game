@@ -148,6 +148,7 @@ function reset() {
 
 // starts the game with setInterval() and renderBoard()
 function gameOn() {
+    moveUp = true;
     // recalls renderBoard() for every speed in milliseconds
     let interval = setInterval(() => renderBoard(), speed);
 
