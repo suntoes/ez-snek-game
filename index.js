@@ -25,7 +25,7 @@ let moveRight = false;
 let moveUp = true;
 let moveDown = false;
 
-let speed = 400;
+let speed = 500;
 
 let defPass = true;
 
@@ -105,7 +105,7 @@ function inputKey(key) {
 
 // sets new speed
 function newSpeed() {
-    speed = 400 -(( 1/( board.length/snakeIndex.length) )*200);
+    speed = 500 -(( 1/( board.length/snakeIndex.length) )*200);
 }
 
 // sets new list of snake-free index for next apple
@@ -247,30 +247,54 @@ function defTest() {
 
 // resets the #board-div with a new fresh updated divs ;)
 function draw(board) {
-    document.querySelector('#board-div').innerHTML = '';
-    // div checker for snake, apple, and blank cells
-    board.forEach(( e, i) => {
-    const cell = document.createElement('div');
-    document.querySelector('#board-div').appendChild(cell);
-    cell.id = i;
-    // special add-ons for snake head cell
-    if(i === snakeIndex[0]) {
-        cell.classList.add('cells')
-        cell.classList.add('cell-head')
-        cell.innerHTML = ':'
-    } else {
-        // generic cell
-        cell.classList.add('cells')
-    };
-    // give the life/color to div
-    cell.style.backgroundColor = 
-        // ternary cause i'm lazy
-        snakeIndex.some(x => x === i) ? '#4df163' :
-        i === appleIndex ? '#ff5959' :
-        '#212121'
-    })
-    // give the snake head sum cute eyes
-    const head = document.getElementById(snakeIndex[0])
-    let numDeg = moveUp ? 90 : moveRight ? 180 : moveDown ? 270 : 0
-    head.style.transform = `rotate(${numDeg}deg)`
+    if (document.querySelector('#board-div').innerHTML === '') {
+        board.forEach(( e, i) => {
+
+            const cell = document.createElement('div')
+            document.getElementById('board-div').appendChild(cell);
+
+            cell.id = i
+            cell.classList.add('cells');
+            cell.style.backgroundColor = '#212121';
+
+            if(snakeIndex.some(x => x === i)) {
+                if(i === snakeIndex[0]) {
+                    cell.classList.add('cell-head');
+                    cell.innerHTML = ':';
+    
+                    let numDeg = moveUp ? 90 : moveRight ? 180 : moveDown ? 270 : 0
+                    cell.style.transform = `rotate(${numDeg}deg)`
+                };
+                cell.style.backgroundColor = '#4df163';
+            }   else if(i === appleIndex) {
+                    cell.style.backgroundColor = '#ff5959';
+                }
+  
+        });
+    }   else {
+            board.forEach(( e, i) => {
+
+                const cell = document.getElementById(i);
+                cell.style.backgroundColor = '#212121';
+
+                if(snakeIndex.some(x => x === i)) {
+                    if(cell.innerHTML === ':' && i !== snakeIndex[0]) {
+                        cell.innerHTML = '';
+                        cell.classList.remove('cell-head');
+                        cell.style.transform = '';
+                    } else if(i === snakeIndex[0]) {
+                        cell.classList.add('cell-head');
+                        cell.innerHTML = ':';
+    
+                        let numDeg = moveUp ? 90 : moveRight ? 180 : moveDown ? 270 : 0
+                        cell.style.transform = `rotate(${numDeg}deg)`
+                        };    
+
+                    cell.classList.add('cells');
+                    cell.style.backgroundColor = '#4df163';
+                }   else if(i === appleIndex) {
+                        cell.style.backgroundColor = '#ff5959';
+                    };
+            });
+        }
 }
