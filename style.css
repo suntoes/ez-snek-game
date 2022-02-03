@@ -132,48 +132,6 @@ button:hover, .cells:hover {
 }
 
 @media screen {
-    @media (max-width: 500px) {
-        #game-button {
-            font-size: 17px;
-            width: 240px;
-        }
-        #game-button:hover {
-            font-size: 20.4ppx;
-        }
-
-        #board-div {
-            width: 240px;
-            height: 360px;
-        }
-        .wrapper {
-            width: 240px;
-        }
-        .cells {
-            height: 30px;
-            width: 30px;
-            font-weight: 600;
-        }
-        .cell-head {
-            font-size: 34px;
-        }
-        .controls-button {
-            font-size: 30px;
-        }
-        .controls-button {
-            font-size: 36px;
-        }
-        .bottom-bar {
-            font-size: 10px;
-        }
-        #a,#d{
-            height: 90px;
-            width: 60px;
-        }
-        #w,#s{
-            width: 120px;
-            height: 45px;
-        }
-    }
     @media (min-height: 1100px) and (max-width: 1000px) {
         html {
 
