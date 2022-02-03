@@ -137,6 +137,10 @@ button:hover, .cells:hover {
             font-size: 17px;
             width: 240px;
         }
+        #game-button:hover {
+            font-size: 20.4ppx;
+        }
+
         #board-div {
             width: 240px;
             height: 360px;
@@ -154,6 +158,9 @@ button:hover, .cells:hover {
         }
         .controls-button {
             font-size: 30px;
+        }
+        .controls-button {
+            font-size: 36px;
         }
         .bottom-bar {
             font-size: 10px;
