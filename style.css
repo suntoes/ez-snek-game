@@ -132,7 +132,7 @@ button:hover, .cells:hover {
 }
 
 @media screen {
-    @media (min-height: 500px) {
+    @media (min-height: 300px) {
         html {
             background-color: white;
         }
