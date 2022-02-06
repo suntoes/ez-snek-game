@@ -132,22 +132,22 @@ button:hover, .cells:hover {
 }
 
 @media screen {
-    @media (min-height: 1100px) and (max-width: 1000px) {
+    @media (min-height: 1100px) {
         html {
-
+            background-color: white;
         }
         body {
-            transform: scale(100%);
+            transform: scale(105%);
 
         }
     }
-    @media (min-height: 1500px) and (max-width: 1500px) {
+    @media (min-height: 1500px {
         body {
-            transform: scale(100%);
+            transform: scale(130%);
 
       }
         html {
-
-            }
+            background-color: white;
+           }
     }
 }
