@@ -132,7 +132,7 @@ button:hover, .cells:hover {
 }
 
 @media screen {
-    @media (min-height: 1100px) {
+    @media (min-height: 500px) {
         html {
             background-color: white;
         }
@@ -141,13 +141,13 @@ button:hover, .cells:hover {
 
         }
     }
-    @media (min-height: 1500px {
+    @media (min-height: 700px {
         body {
             transform: scale(130%);
 
       }
         html {
-            background-color: white;
+            background-color: red;
            }
     }
 }
