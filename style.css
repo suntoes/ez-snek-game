@@ -137,13 +137,13 @@ button:hover, .cells:hover {
 
         }
         body {
-            transform: scale(105%);
+            transform: scale(100%);
 
         }
     }
     @media (min-height: 1500px) and (max-width: 1500px) {
         body {
-            transform: scale(130%);
+            transform: scale(100%);
 
       }
         html {
