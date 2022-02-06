@@ -137,9 +137,9 @@ button:hover, .cells:hover {
             background-color: white;
         }
         body {
-            transform: scale(60%);
-            -ms-transform: scale(60%);
             -webkit-transform: scale(60%);
+            -ms-transform: scale(60%);
+            transform: scale(60%);
         }
     }
     @media (min-height: 700px {
