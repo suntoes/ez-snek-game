@@ -138,7 +138,8 @@ button:hover, .cells:hover {
         }
         body {
             transform: scale(60%);
-
+            -ms-transform: scale(60%);
+            -webkit-transform: scale(60%);
         }
     }
     @media (min-height: 700px {
