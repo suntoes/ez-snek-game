@@ -132,7 +132,7 @@ button:hover, .cells:hover {
 }
 
 @media screen {
-    @media only screen and (min-width: 480px) {
+    @media (min-width:320px) and (max-width: 480px) {
         body {
             -webkit-transform: scale(80%);
             -ms-transform: scale(80%);
