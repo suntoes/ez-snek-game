@@ -132,21 +132,11 @@ button:hover, .cells:hover {
 }
 
 @media screen {
-    @media (min-width:320px) and (max-width: 480px) {
-        body {
-            -webkit-transform: scale(80%);
-            -ms-transform: scale(80%);
-            transform: scale(80%);
-        }
-    }
-    @media only screen and (min-width: 320px) {
+    @media (min-height: 300px) and (max-width: 500px) {
         body {
             -webkit-transform: scale(60%);
             -ms-transform: scale(60%);
             transform: scale(60%);
-      }
-        html {
-            background-color: red;
-           }
+        }
     }
 }
